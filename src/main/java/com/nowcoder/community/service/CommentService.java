@@ -30,6 +30,7 @@ public class CommentService implements CommunityConstant {
         return commentMapper.selectCountByEntity(entityType, entityId);
     }
 
+
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public int addComment(Comment comment) {
         if (comment == null) {
@@ -40,7 +41,7 @@ public class CommentService implements CommunityConstant {
         comment.setContent(HtmlUtils.htmlEscape(comment.getContent()));
         int rows = commentMapper.insertComment(comment);
 
-        // 更新帖子评论数量
+        // 更新 帖子 评论数量
         if (comment.getEntityType() == ENTITY_TYPE_POST) {
             int count = commentMapper.selectCountByEntity(comment.getEntityType(), comment.getEntityId());
             discussPostService.updateCommentCount(comment.getEntityId(), count);

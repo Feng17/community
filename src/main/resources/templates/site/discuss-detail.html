@@ -159,6 +159,7 @@
 									<div th:id="|huifu-${rvoStat.count}|" class="mt-4 collapse">
 										<form method="post" th:action="@{|/comment/add/${post.id}|}">
 											<div>
+												<!--回复当前评论作者-->
 												<input type="text" class="input-size" name="content" th:placeholder="|回复${rvo.user.username}|"/>
 												<input type="hidden" name="entityType" value="2">
 												<input type="hidden" name="entityId" th:value="${cvo.comment.id}">
