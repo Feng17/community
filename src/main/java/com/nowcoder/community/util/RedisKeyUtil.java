@@ -24,13 +24,13 @@ public class RedisKeyUtil {
         return PREFIX_USER_LIKE + SPLIT + userId;
     }
 
-    // 某个用户关注的实体
+    // 某个用户关注的实体  关注目标
     // followee:userId:entityType -> zset(entityId,now)
     public static String getFolloweeKey(int userId, int entityType) {
         return PREFIX_FOLLOWEE + SPLIT + userId + SPLIT + entityType;
     }
 
-    // 某个实体拥有的粉丝
+    // 某个实体拥有的粉丝  粉丝
     // follower:entityType:entityId -> zset(userId,now)
     public static String getFollowerKey(int entityType, int entityId) {
         return PREFIX_FOLLOWER + SPLIT + entityType + SPLIT + entityId;
