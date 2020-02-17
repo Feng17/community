@@ -7,7 +7,8 @@ public class RedisKeyUtil {
     private static final String PREFIX_USER_LIKE = "like:user";
     private static final String PREFIX_FOLLOWEE = "followee";
     private static final String PREFIX_FOLLOWER = "follower";
-    private static final String PREFIX_KAPTCHA = "kaptcha";
+
+
     private static final String PREFIX_TICKET = "ticket";
     private static final String PREFIX_USER = "user";
 
