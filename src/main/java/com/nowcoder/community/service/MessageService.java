@@ -25,6 +25,8 @@ public class MessageService {
         return messageMapper.updateStatus(ids, 1);
     }
 
+
+
     public Message findLatestNotice(int userId, String topic) {
         return messageMapper.selectLatestNotice(userId, topic);
     }
